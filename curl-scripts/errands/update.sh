@@ -7,8 +7,8 @@ curl "http://localhost:4741/errands/${ID}" \
     "errand": {
       "errand_name": "'"${ERRAND}"'",
       "location": "'"${LOCATION}"'",
-      "due_date": "'"${DUE_DATE}"'",
-      "due_time": "'"${DUE_TIME}"'",
+      "due_date": "'"${DATE}"'",
+      "due_time": "'"${TIME}"'",
       "done_status": "'"${STATUS}"'"
     }
   }'

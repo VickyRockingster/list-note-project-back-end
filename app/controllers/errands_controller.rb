@@ -46,6 +46,6 @@ class ErrandsController < ProtectedController
 
     # Only allow a trusted parameter "white list" through.
     def errand_params
-      params.require(:errand).permit(:errand_name, :location, :due_date, :due_time, :done_status, :current_user)
+      params.require(:errand).permit(:errand_name, :location, :due_date, :due_time, :done_status)
     end
 end
