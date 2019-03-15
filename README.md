@@ -15,11 +15,21 @@ etc); and a 'to-get' list, where users can list all the things they need to
 get (e.g. list of groceries to buy, list of Christmas gifts to get, etc).
 
 This is the repository for all the back-end code for my ListNote project. Here
-is the link to the back-end site:
-Here is the link to the front-end repository:
-And lastly, here is the link to the ListNote site:
+is the link to the back-end site: https://list-note-project-back-end.herokuapp.com/
+
+Here is the link to the back-end repository:
+https://github.com/VickyRockingster/list-note-project-back-end
+
+Here is the link to the front-end repository: https://github.com/VickyRockingster/list-note-project-front-end
+
+And lastly, here is the link to the ListNote (front-end) site:
+https://vickyrockingster.github.io/list-note-project-front-end/
 
 ERD:
 https://i.imgur.com/S0tjNv5.png
 
 Process:
+After creating my front- and back-end repositories, I actually started by creating a lot of the html in the front-end. I wanted to clarify in my mind what I wanted my user to be able to do, and utilizing the wireframe so structure the html helped me do that. This way, I was better able to design a back end where my API requests would be specific and targetted without getting lost in the process.
+After organizing my html, I used my ERD table to start the process of meeting MVP; that is, creating a one-to-many relationship between the users table and the errands table. After I was successfully able to CRUD user via curl-script, I tested my ability to CRUD errands after logging in as a user. After fixing a mix-up with :user and :current_user, I was able to do so successfully, so that any user could CRUD an errand, and each user only had access to their own errands on the errands table.
+Then, I moved on to building out the front-end, so that users can sign-up, sign-in, and create errands. I went through the same process of making sure that a signed-in user could CRUD on the errands table.
+I ran into a lot more issues on the front end, however, and successfully CRUDing my errands resource table. Even though I am able to successfully GET and CREATE errands, I am still formatting the correct way to UPDATE and DELETE them. Once I have done that, I can move on to building out the 'chores' and 'to-get' resources tables in the back end and creating them in the front end.
