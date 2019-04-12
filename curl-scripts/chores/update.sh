@@ -4,8 +4,8 @@ curl "http://localhost:4741/chores/${ID}" \
   --header "Content-Type: application/json" \
   --header "Authorization: Token token=${TOKEN}" \
   --data '{
-    "errand": {
-      "chore_name": "'"${ERRAND}"'",
+    "chore": {
+      "chore_name": "'"${CHORE}"'",
       "due_date": "'"${DATE}"'",
       "due_time": "'"${TIME}"'",
       "done_status": "'"${STATUS}"'"

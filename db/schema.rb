@@ -10,10 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_12_195539) do
+ActiveRecord::Schema.define(version: 2019_04_12_152536) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "chores", force: :cascade do |t|
+    t.string "chore_name", null: false
+    t.date "due_date"
+    t.time "due_time"
+    t.boolean "done_status", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_chores_on_user_id"
+  end
 
   create_table "errands", force: :cascade do |t|
     t.string "errand_name", null: false
@@ -47,6 +58,7 @@ ActiveRecord::Schema.define(version: 2019_03_12_195539) do
     t.index ["token"], name: "index_users_on_token", unique: true
   end
 
+  add_foreign_key "chores", "users"
   add_foreign_key "errands", "users"
   add_foreign_key "examples", "users"
 end
