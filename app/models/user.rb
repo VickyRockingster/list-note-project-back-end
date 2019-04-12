@@ -4,4 +4,5 @@ class User < ApplicationRecord
   include Authentication
   has_many :examples
   has_many :errands, dependent: :destroy
+  has_many :chores, dependent: :destroy
 end

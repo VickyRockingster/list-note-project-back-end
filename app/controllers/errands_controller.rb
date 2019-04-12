@@ -1,5 +1,5 @@
 class ErrandsController < ProtectedController
-  before_action :set_errand, only: [:show, :update, :destroy]
+  before_action :set_errand, only: %i[show update destroy]
 
   # GET /errands
   def index
@@ -39,13 +39,14 @@ class ErrandsController < ProtectedController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_errand
-      @errand = current_user.errands.find(params[:id])
-    end
 
-    # Only allow a trusted parameter "white list" through.
-    def errand_params
-      params.require(:errand).permit(:errand_name, :location, :due_date, :due_time, :done_status)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_errand
+    @errand = current_user.errands.find(params[:id])
+  end
+
+  # Only allow a trusted parameter "white list" through.
+  def errand_params
+    params.require(:errand).permit(:errand_name, :location, :due_date, :due_time, :done_status)
+  end
 end

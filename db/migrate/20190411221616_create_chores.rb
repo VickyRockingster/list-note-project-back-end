@@ -1,10 +1,9 @@
 # frozen_string_literal: true
 
-class CreateErrands < ActiveRecord::Migration[5.2]
+class CreateChores < ActiveRecord::Migration[5.2]
   def change
-    create_table :errands do |t|
-      t.string :errand_name, null: false
-      t.string :location, null: false
+    create_table :chores do |t|
+      t.string :chore_name, null: false
       t.date :due_date
       t.time :due_time
       t.boolean :done_status, null: false
